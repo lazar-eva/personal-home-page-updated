@@ -1,0 +1,149 @@
+/* =================
+  WRITE YOUR CSS HERE.
+  Check the ⌄ for help with formatting and validating your code.
+  You must write some CSS to complete this challenge.
+   ===================
+*/
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+.c-site-header {
+  background-image: url("https://images.unsplash.com/photo-1612538498613-35c5c8d675c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80");
+  height: 200px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}  
+.menu {
+  align-self: center;
+}
+.logo {
+  justify-self: stretch;
+  margin-left: 30px;
+}
+
+ul { 
+   list-style-type: none;
+   margin: 0;
+   padding: 12px;
+   overflow: hidden;
+}
+li {
+  float: left;
+  background: #E9E0D8; 
+  margin: 5px;
+  border-radius: 3em;
+  border: solid white;
+}
+li a {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 15px;
+}
+
+li:hover { 
+  background-color: #CBB6A4;
+}
+
+ section {
+  padding: 3em 3em; 
+} 
+
+.hero {
+  background: #F0EAE5;
+}
+
+.heading {
+  font-size: 4em;
+  color: #353131;
+  letter-spacing: .2em;
+  text-align: left;
+ }
+ .subteg {
+   color: #353131;
+   font-size: 2em;
+   text-align: left;
+   font-family: 'Poppins', sans-serif;
+   letter-spacing: .2em;
+}
+.hero-img, .sec-photo {
+  width: 100%;
+  margin-top: 0;
+}
+
+.about {
+  background: #E1D5CB; 
+}
+
+.gallery {
+  background: #CBB6A4;
+}
+.contact-section {
+  background: #AD8D71;
+}
+
+label {
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+}
+
+input, textarea {
+  width: 50%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  border: 1px solid grey;
+}
+
+.send-message {
+  width: 50%;
+  background-color: #252323;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 5em;
+  border-radius: 5em;
+  
+}
+ 
+.c-site-footer {
+  font-size: 0.7em;
+  font-family: 'Poppins', sans-serif;
+  color: #252323;
+  background: #DAD2BC;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.text {
+  font-size: 1.2em;
+  line-height: 1.5;
+  grid-column: 1 / 2;
+}
+.video {
+  grid-column: 2 / 3;
+}
+
+
+
+
+/* don't edit this */
+.jest-lite-report__status--pass {
+  background: var(--color-pass);
+}
+.jest-lite-report__errors { display:none }
