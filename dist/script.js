@@ -7,7 +7,7 @@
 
 const {
   core: { test, expect, run },
-  prettify
+  prettify,
 } = window.jestLite;
 
 /* =================
@@ -67,35 +67,35 @@ test("There are at least 500 words on the page", () => {
 const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
 
-var sheep_count, text_input, other_count;
+// CYF BLOCKS Image Carousel
+var array;
 
-function getNumberOrString(value) {
-  // Convert a string value to a number if possible
-  let number_value = Number(value);
-  if (Number.isNaN(number_value)) {
-    return value
-  } else {
-    return number_value
-  }
+// Describe this function...
+function show() {
+  if (--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_image = document.getElementById("image");
+  element_image.setAttribute("src", array[0]);
 }
 
+array = [
+  "https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/flagged/photo-1563536314719-2e812e896f50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1549082984-1323b94df9a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1580894895938-bd31a62ed8ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
+  "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1630090896228-88e5ea707294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+  "https://images.unsplash.com/photo-1630091003936-aea522c1e8c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+];
+show();
 
-sheep_count = 0;
-other_count = 0;
-text_input = '';
+document.getElementById("previous").addEventListener("click", (event) => {
+  array.unshift(array.pop());
+  show();
+});
 
-
-document.getElementById('button').addEventListener('click', (event) => {
-  text_input = getNumberOrString(document.getElementById('text').value);
-  let element_text = document.getElementById('text');
-  if (text_input == 'sheep') {
-    sheep_count = (typeof sheep_count === 'number' ? sheep_count : 0) + 1;
-    let element_sheep_count = document.getElementById('sheep_count');
-    element_sheep_count.innerText = sheep_count;
-  } else {
-    other_count = (typeof other_count === 'number' ? other_count : 0) + 1;
-    let element_other_count = document.getElementById('other_count');
-    element_other_count.innerText = other_count;
-  }
-
+document.getElementById("next").addEventListener("click", (event) => {
+  array.push(array.shift());
+  show();
 });
